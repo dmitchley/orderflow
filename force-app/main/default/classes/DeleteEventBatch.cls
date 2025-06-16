@@ -29,7 +29,8 @@ global class DeleteEventBatch implements Database.Batchable<sObject> {
           
             
             mail.setHtmlBody('The DeleteEventBatch Batch Processing has been completed! ');
-         //   emailList.add(mail);
+         //   emailList.add(mail); 
+        // System.debug("Debug ");
         Messaging.sendEmail(new List<Messaging.SingleEmailMessage> {mail});        
     }
 }
