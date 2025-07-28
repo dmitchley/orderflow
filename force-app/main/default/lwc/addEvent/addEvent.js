@@ -1,7 +1,9 @@
 import { LightningElement, track } from 'lwc';
 import { createRecord } from 'lightning/uiRecordApi';
 import EVT_OBJECT from '@salesforce/schema/Event__c';
-import Name_F from '@salesforce/schema/Event__c.Name__c';
+//import Name_F from '@salesforce/schema/Event__c.Name__c';
+import Name__c from '@salesforce/schema/Event__c.Name__c';
+
 import Event_Organizer__c from '@salesforce/schema/Event__c.Event_Organizer__c';
 import Start_DateTime__c from '@salesforce/schema/Event__c.Start_DateTime__c';
 import End_Date_Time__c from '@salesforce/schema/Event__c.End_Date_Time__c';
@@ -51,7 +53,9 @@ export default class AddEvent extends NavigationMixin(LightningElement) {
 
     handleClick() {
         const fields = {};
-        fields[Name_F.fieldApiName] = this.eventRecord.Name;
+        fields[Name__c.fieldApiName] = this.eventRecord.Name;
+
+        //fields[Name_F.fieldApiName] = this.eventRecord.Name;
         fields[Event_Organizer__c.fieldApiName] = this.eventRecord.Event_Organizer__c;
         fields[Start_DateTime__c.fieldApiName] = this.eventRecord.Start_DateTime__c;
         fields[End_Date_Time__c.fieldApiName] = this.eventRecord.End_Date_Time__c;
