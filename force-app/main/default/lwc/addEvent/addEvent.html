@@ -1,9 +1,9 @@
 <template>
     <lightning-card variant="Narrow" title="Event Information" icon-name="standard:event">
         <div class="slds-m-around_small">
-            <!-- <template if:true={errors}>
+            <template if:true={errors}>
                 {errors}
-            </template> -->
+            </template>
         </div>
         <div class="slds-m-around_small">
             <lightning-input type="text" required variant="standard" name="Name" value={eventRecord.Name} label="Name"

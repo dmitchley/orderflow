@@ -65,6 +65,9 @@ export default class AddEvent extends NavigationMixin(LightningElement) {
 
         const eventRecord = { apiName: EVT_OBJECT.objectApiName, fields };
 
+        console.log('Start:', this.eventRecord.Start_DateTime__c);
+        console.log('End:', this.eventRecord.End_Date_Time__c);
+
         createRecord(eventRecord)
             .then((eventRec) => {
                 this.dispatchEvent(new ShowToastEvent({
