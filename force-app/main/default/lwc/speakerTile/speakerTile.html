@@ -1,7 +1,7 @@
 <template>
   <template if:true={speaker}>
-    <div class="speaker-tile">
-      <div class="speaker-photo">
+    <lightning-layout vertical-align="center">
+      <lightning-layout-item>
         <template if:true={speaker.Picture__c}>
           <img src={speaker.Picture__c} alt="Profile photo" />
         </template>
@@ -11,20 +11,20 @@
             alt="Profile photo"
           />
         </template>
-      </div>
-
-      <div class="speaker-info">
-        <p class="speaker-name">{speaker.Name}</p>
-        <p class="speaker-email">
-          <lightning-formatted-email value={speaker.Email}>
-          </lightning-formatted-email>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <p>{speaker.Name}</p>
+        <p>
+          <lightning-formatted-email
+            value={speaker.Email}
+          ></lightning-formatted-email>
         </p>
-        <p class="speaker-about">
+        <p>
           <lightning-formatted-rich-text
             value={speaker.About_Me__c}
           ></lightning-formatted-rich-text>
         </p>
-      </div>
-    </div>
+      </lightning-layout-item>
+    </lightning-layout>
   </template>
 </template>
