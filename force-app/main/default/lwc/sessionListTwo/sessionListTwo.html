@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Event Sessions">
+        <template if:true={sessions}>
+            <lightning-datatable
+                key-field="Id"
+                data={sessions}
+                columns={columns}
+            ></lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>
